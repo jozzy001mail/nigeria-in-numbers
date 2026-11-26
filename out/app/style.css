@@ -1,0 +1,94 @@
+/* Nigeria in Numbers — stylesheet. Green/white palette after the Nigerian flag. */
+:root {
+  --green: #0b7a4b;
+  --green-dark: #14532d;
+  --ink: #1d2b1d;
+  --muted: #5a6b5a;
+  --line: #dfe6df;
+  --bg: #f6f8f3;
+  --card: #ffffff;
+  --red: #b3402e;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.55;
+}
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+a { color: var(--green); }
+a:hover { color: var(--green-dark); }
+
+.site-header { background: var(--green-dark); color: #fff; }
+.header-inner { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; padding-top: 10px; padding-bottom: 10px; }
+.brand { color: #fff; text-decoration: none; font-weight: 800; font-size: 1.25rem; display: flex; align-items: center; gap: 10px; }
+.brand:hover { color: #d7ecd9; }
+.flag { display: inline-block; width: 26px; height: 18px; background: linear-gradient(90deg, #008751 33%, #fff 33% 66%, #008751 66%); border: 1px solid rgba(255,255,255,.6); border-radius: 2px; }
+nav { display: flex; gap: 4px; flex-wrap: wrap; margin-left: auto; }
+nav a { color: #cfe6d2; text-decoration: none; padding: 6px 12px; border-radius: 6px; font-weight: 600; }
+nav a:hover { color: #fff; background: rgba(255,255,255,.12); }
+nav a.active { background: #fff; color: var(--green-dark); }
+
+main { padding: 28px 20px 48px; }
+h1 { font-size: 2rem; margin: 0 0 8px; line-height: 1.2; }
+h2 { font-size: 1.4rem; margin: 32px 0 12px; }
+h3 { font-size: 1.1rem; margin: 0 0 10px; }
+.lede { font-size: 1.08rem; color: #334433; max-width: 70ch; }
+
+.hero { background: linear-gradient(135deg, var(--green-dark), var(--green)); color: #fff; border-radius: 14px; padding: 28px 30px; margin-bottom: 8px; }
+.hero h1 { color: #fff; font-size: 2.4rem; }
+.hero .lede { color: #e2f2e4; }
+.hero-facts { display: flex; gap: 22px; flex-wrap: wrap; margin-top: 18px; font-size: .98rem; }
+.hero-facts strong { font-size: 1.25rem; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; margin: 14px 0; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; }
+.card-label { font-size: .85rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+.card-value { font-size: 1.9rem; font-weight: 800; color: var(--green-dark); margin: 4px 0 2px; }
+.card-note { font-size: .92rem; color: var(--muted); }
+.src { display: block; margin-top: 8px; font-size: .8rem; color: #7a8a7a; }
+
+.panel { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 20px 22px; margin: 14px 0; }
+.panel-src { font-size: .8rem; font-weight: 400; color: var(--muted); }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 760px) { .grid2 { grid-template-columns: 1fr; } .hero h1 { font-size: 1.8rem; } }
+.fine { font-size: .88rem; color: var(--muted); }
+.bullets { padding-left: 20px; }
+.bullets li { margin-bottom: 8px; }
+
+.switcher { display: flex; gap: 8px; flex-wrap: wrap; margin: 16px 0 4px; }
+.switch-btn { border: 1px solid var(--green); background: #fff; color: var(--green-dark); padding: 8px 14px; border-radius: 999px; font-weight: 700; cursor: pointer; }
+.switch-btn:hover { background: #e8f3ea; }
+.switch-btn.active { background: var(--green); color: #fff; }
+.btn { background: var(--green); color: #fff; border: none; padding: 9px 16px; border-radius: 8px; font-weight: 700; cursor: pointer; }
+.btn:hover { background: var(--green-dark); }
+
+.data-table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+.data-table th, .data-table td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: left; }
+.data-table th { background: #eef4ee; }
+.data-table .num { text-align: right; font-variant-numeric: tabular-nums; }
+.data-table.clickable tbody tr { cursor: pointer; }
+.data-table.clickable tbody tr:hover { background: #eef6ee; }
+.data-table tbody tr.selected { background: #dcefdd; }
+.table-wrap { overflow-x: auto; }
+
+.controls { display: flex; gap: 14px; flex-wrap: wrap; align-items: end; margin: 16px 0 6px; }
+.controls label { display: flex; flex-direction: column; font-weight: 700; font-size: .9rem; gap: 4px; }
+.controls input, .controls select { padding: 8px 10px; border: 1px solid #b9c6b9; border-radius: 8px; font-size: 1rem; background: #fff; }
+
+.states-layout { display: grid; grid-template-columns: 1.6fr 1fr; gap: 16px; align-items: start; }
+@media (max-width: 860px) { .states-layout { grid-template-columns: 1fr; } }
+.detail { position: sticky; top: 12px; }
+.detail.empty { color: var(--muted); }
+.facts { margin: 0; }
+.facts div { display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-bottom: 1px solid var(--line); }
+.facts dt { color: var(--muted); }
+.facts dd { margin: 0; font-weight: 700; text-align: right; }
+
+.calc { display: flex; gap: 12px; flex-wrap: wrap; align-items: end; margin: 12px 0; }
+.calc label { font-weight: 700; display: flex; flex-direction: column; gap: 4px; }
+.calc input, .calc select { padding: 8px 10px; border: 1px solid #b9c6b9; border-radius: 8px; font-size: 1rem; }
+.calc-result { font-size: 1.2rem; background: #eef6ee; border-radius: 8px; padding: 12px 14px; }
+.basket-input { width: 110px; padding: 6px 8px; border: 1px solid #b9c6b9; border-radius: 6px; text-align: right; }
+
+.site-footer { border-top: 1px solid var(--line); padding: 22px 0 30px; color: var(--muted); font-size: .9rem; }
